@@ -1,5 +1,8 @@
 import org.junit.Rule;
 import org.junit.Test;
+import org.moringa.Animal;
+import org.moringa.Ranger;
+import org.moringa.Sighting;
 
 import java.util.Arrays;
 

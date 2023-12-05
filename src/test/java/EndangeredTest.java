@@ -1,5 +1,7 @@
 import org.junit.Rule;
 import org.junit.Test;
+import org.moringa.Animal;
+import org.moringa.EndangeredAnimal;
 
 import java.util.Arrays;
 

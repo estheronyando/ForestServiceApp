@@ -1,9 +1,14 @@
+
 import org.junit.Rule;
 import org.junit.Test;
+import org.moringa.Animal;
+
 
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
+
+
 
 public class AnimalTest {
     @Rule

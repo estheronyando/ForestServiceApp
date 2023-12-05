@@ -1,4 +1,6 @@
+
 import org.junit.rules.ExternalResource;
+import org.moringa.DB;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
@@ -7,7 +9,7 @@ public class DatabaseRule extends ExternalResource {
     //setup dbconnection before each testt
     @Override
     protected void before() {
-        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "postgres", null);
+        DB.sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildlife_tracker_test", "postgres", "admin");
     }
 
     @Override

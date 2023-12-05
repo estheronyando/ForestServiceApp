@@ -1,5 +1,6 @@
 import org.junit.Rule;
 import org.junit.Test;
+import org.moringa.Ranger;
 
 import java.util.Arrays;
 
