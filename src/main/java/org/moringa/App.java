@@ -117,6 +117,39 @@ public class App {
 
         }, new HandlebarsTemplateEngine());
 
+        //rangers routes
+        post("/rangers/new", (request, response) -> {
+
+            Map<String, Object> model = new HashMap<>();
+
+            String name = request.queryParams("name");
+            String badge_number=request.queryParams("badge_number");
+            String phone_number=request.queryParams("phone_number");
+            String email=request.queryParams("email");
+
+
+            Ranger newRanger = new Ranger(name,badge_number,phone_number,email);
+            newRanger.save();
+
+            model.put("rangers", newRanger);
+            return new ModelAndView(model, "rangers-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+//        2.READ
+
+        get("/rangers/form",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            return new ModelAndView(model,"rangers-form.hbs");
+        },new HandlebarsTemplateEngine());
+
+        get("/rangers/view",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            model.put("rangers",Ranger.all());
+            return new ModelAndView(model,"rangers-view.hbs");
+        },new HandlebarsTemplateEngine());
+
+
 
     }
 }
