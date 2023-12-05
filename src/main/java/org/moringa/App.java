@@ -3,7 +3,9 @@ package org.moringa;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.*;
@@ -59,6 +61,60 @@ public class App {
             model.put("animals", newEndageredAnimal);
 
             return new ModelAndView(model, "endangered-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //ANIMAL
+        get("animals/form", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("animals", Animal.all());
+
+            return new ModelAndView(model, "animals-form.hbs");
+
+        }, new HandlebarsTemplateEngine());
+
+        get("/animals/view", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+//            model.put("animals",EndangeredAnimal.getAllEndangered());
+            model.put("animals", Animal.all());
+            return new ModelAndView(model, "animals-view.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/endangered/form", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            List<String> age = new ArrayList<String>();
+            age.add(EndangeredAnimal.ADULT_AGE);
+            age.add(EndangeredAnimal.NEWBORN_AGE);
+            age.add(EndangeredAnimal.YOUNG_AGE);
+
+            List<String> health = new ArrayList<String>();
+            health.add(EndangeredAnimal.ILL_HEALTH);
+            health.add(EndangeredAnimal.OKAY_HEALTH);
+            health.add(EndangeredAnimal.HEALTHY_HEALTH);
+
+            model.put("health", health);
+            model.put("age", age);
+
+            return new ModelAndView(model, "endangered-form.hbs");
+
+        }, new HandlebarsTemplateEngine());
+
+
+        get("/animals/:id/delete", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int animalId = Integer.parseInt(request.params(":id"));
+            Animal foundAnimal = Animal.find(animalId);
+
+            foundAnimal.deleteById(animalId);
+            model.put("animals", Animal.all());
+            return new ModelAndView(model, "animals-view.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/animals/delete", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Animal.deleteAll();
+            model.put("animals", Animal.all());
+            return new ModelAndView(model, "animals-view.hbs");
+
         }, new HandlebarsTemplateEngine());
 
 
