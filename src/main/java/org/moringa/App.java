@@ -14,7 +14,7 @@ import static spark.Spark.*;
 
 public class App {
 
-    static int getHerokuAssignedPort() {
+    static int getAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
         String portEnv = processBuilder.environment().get("PORT");
 
@@ -26,7 +26,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        port(getHerokuAssignedPort());
+        port(getAssignedPort());
         staticFileLocation("/public");
 
         Handlebars handlebars = new Handlebars();
