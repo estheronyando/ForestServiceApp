@@ -130,7 +130,7 @@ public class Animal implements DbManagement {
         }
 
     }
-    public static void deleteAll(\){
+    public static void deleteAll(){
         try (Connection con=DB.sql2o.open()){
             String sql = "DELETE FROM animals";
             con.createQuery(sql)
