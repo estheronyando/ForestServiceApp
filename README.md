@@ -44,7 +44,7 @@ There are curently no known bugs.
 You will need to have
 1. Open JDK 20
 1. SDK
-1. Gradle
+1. Maven
 1. Junit
 1. Spark
 1. Intellij
