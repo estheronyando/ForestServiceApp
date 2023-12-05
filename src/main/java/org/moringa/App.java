@@ -28,5 +28,21 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
+
+        //animals routing
+        post("/animals/new", (request, response) -> {
+
+            Map<String, Object> model = new HashMap<>();
+
+            String name = request.queryParams("name");
+            String type = "common";
+            Animal newAnimal = new Animal(name, type);
+            newAnimal.save();
+
+            model.put("animals", newAnimal);
+
+
+            return new ModelAndView(model, "animals-form.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
