@@ -1,0 +1,68 @@
+{{#partial "content"}}
+    <div class="container mt-5">
+
+        <div class="row text-center">
+            {{#if sightings}}
+                <h1><u>Ranger {{rangerId}} Sightings</u></h1>
+
+                <div class="col-lg-12 col-md-12 col-12 mb-4 ">
+                    <table class="table table-striped ">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">ANIMAL_NAME:</th>
+                            <th scope="col">LOCATION</th>
+                            <th scope="col">RANGER_ID</th>
+                            <th scope="col">TIME</th>
+                            <th scope="col">OPERATION</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+                        {{#each sightings}}
+                            <tr >
+
+                                <td>{{id}}</td>
+                                <td>{{animalName}}</td>
+                                <td>{{location}}</td>
+                                <td>{{rangerId}}</td>
+                                <td>{{sightTime}}</td>
+                                <td>
+                                        <span>
+                                            <a href="sighting/{{id}}/delete"><i class="fas fa-trash"></i></a>
+                                        </span>
+                                </td>
+
+
+
+                                </td>
+                            </tr>
+                        {{/each}}
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            {{else}}
+                <div class="container">
+                    <h1 class="text-center feedback">No Sightings From This Ranger</h1>
+
+                </div>
+            {{/if}}
+        </div>
+    </div>
+{{/partial}}
+
+
+{{#partial "footer"}}
+    {{#if heroes}}
+        <a href="/sightings/delete"><button class="btn btn-lg btn-danger"> Delete All </button></a>
+    {{else}}
+    {{/if}}
+{{/partial}}
+{{> layout.hbs}}
+
+

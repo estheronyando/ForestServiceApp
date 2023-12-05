@@ -1,0 +1,62 @@
+{{#partial "content"}}
+    <div class="container mt-5">
+
+        <div class="row text-center">
+            {{#if rangers}}
+                <div class="col-lg-12 col-md-12 col-12 mb-4 ">
+                    <table class="table table-striped ">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">NAME:</th>
+                            <th scope="col">BADGE NO</th>
+                            <th scope="col">PHONE NO</th>
+                            <th scope="col">EMAIL</th>
+                            <th scope="col">OPERATION</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#each rangers }}
+                            <tr>
+                                <td>{{id}}</td>
+                                <td>{{name}}</td>
+                                <td>{{badgeNumber}}</td>
+                                <td>{{phoneNumber}}</td>
+                                <td>{{email}}</td>
+                                <td>
+                                        <span>
+                                            <a href="/rangers/{{id}}/delete"><i class="fas fa-trash"></i></a>
+                                            <a href="/rangers/sighting/{{id}}"><i class="fas fa-eye"></i></a>
+                                        </span>
+                                </td>
+                            </tr>
+                        {{/each}}
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            {{else}}
+
+                <div class="container">
+                    <h1 class="text-center feedback">No Rangers Available!</h1>
+
+                </div>
+
+            {{/if}}
+        </div>
+    </div>
+{{/partial}}
+
+
+{{#partial "footer"}}
+    {{#if rangers}}
+        <a href="/rangers/delete"><button class="btn btn-lg btn-danger"> Delete All Rangers</button></a>
+    {{else}}
+    {{/if}}
+{{/partial}}
+{{> layout.hbs}}
+
+
