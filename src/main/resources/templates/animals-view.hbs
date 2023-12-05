@@ -1,0 +1,67 @@
+{{#partial "content"}}
+    <div class="container mt-5">
+
+        <div class="row text-center">
+            {{#if animals}}
+
+                <div class="col-lg-12 col-md-12 col-12 mb-4 ">
+                    <table class="table table-striped ">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">NAME:</th>
+                            <th scope="col">TYPE</th>
+                            <th scope="col">HEALTH</th>
+                            <th scope="col">AGE</th>
+                            <th scope="col">OPERATION</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+                        {{#each animals }}
+                            <tr >
+                                <div class="{{@key}}">
+                                    <td>{{this.id}}</td>
+                                    <td>{{this.name}}</td>
+                                    <td>{{this.type}}</td>
+                                    <td>{{this.health}}</td>
+                                    <td>{{this.age}}</td>
+                                    <td>
+                                        <span>
+                                            <a href="/animals/{{id}}/delete"><i class="fas fa-trash"></i></a>
+                                        </span>
+                                    </td>
+
+                                </div>
+
+                                </td>
+                            </tr>
+                        {{/each}}
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            {{else}}
+                <div class="container">
+                    <h1 class="text-center feedback">No Animals Available!</h1>
+
+                </div>
+            {{/if}}
+        </div>
+    </div>
+{{/partial}}
+
+
+{{#partial "footer"}}
+    {{#if animals}}
+        <a href="/animals/delete"><button class="btn btn-lg btn-danger"> Delete All Animals</button></a>
+    {{else}}
+    {{/if}}
+{{/partial}}
+{{> layout.hbs}}
+
+
