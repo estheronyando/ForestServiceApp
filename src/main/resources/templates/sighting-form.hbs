@@ -1,0 +1,71 @@
+{{#partial "content"}}
+    <section class="form " id="formSection">
+        <div class="container p-5">
+            <div class="row d-flex justify-content-center my-5">
+                <div class="col-lg-10  px-5 pt-5 form-section">
+                    <!-- feedback  -->
+                    <div class="feedback text-center text-capitalize">
+
+                    </div>
+                    <h4 class="text-center"> ADD SIGHTING</h4>
+                    <hr>
+                    <form action="/sighting/new" method="post" id="form">
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+                                <label  for="name">Name</label>
+                                <select class="custom-select" id="name" name="name" required="">
+                                    <option selected></option>
+
+                                    {{#each animal}}
+                                        <div class="{{@key}}">
+                                            <option name="name" value="{{this.name}}">{{this.name}}</option>
+
+                                        </div>
+                                    {{/each}}
+
+
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+                                <label for="name"> Location</label><br>
+                                <input type="text" name="location" id="location" class="form-control my-3 p-4" required=""><br>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+
+                                <label  for="ranger">Ranger</label>
+                                <select class="custom-select" id="ranger" name="ranger">
+                                    <option selected></option>
+
+                                    {{#each ranger}}
+                                        <div class="{{@key}}">
+                                            <option name="ranger" value="{{this.id}}">{{this.name}}</option>
+
+                                        </div>
+                                    {{/each}}
+
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-12 mb-5">
+                                <button type="submit" class="btn form-btn btn-lg">SUBMIT</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{{/partial}}
+{{> layout.hbs}}
