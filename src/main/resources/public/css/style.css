@@ -1,0 +1,199 @@
+/*body {*/
+/*    background-color: rgb(51, 51, 51);*/
+
+/*}*/
+body{
+    background-image: url('../images/darkForest.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+
+}
+
+.navbar-brand h1{
+    /*font-size:50px;*/
+    color: white;
+}
+.nav-brand-logo{
+    height: 50px;
+    width:50px
+}
+
+.nav-item a{
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:20px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+
+.nav-link {
+
+    border-right:4px solid white;
+    margin-bottom: -1px;
+}
+
+.nav-link:hover{
+    font-weight: 800;
+    background:white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: -1px;
+
+}
+
+
+hr{
+    color: white;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.wrapper .logo img {
+    height: 300px;
+}
+
+.form-section{
+
+    background-color: black;
+    opacity: 0.8;
+    border-radius: 10px;
+    box-shadow:5px 5px 10px #197615;
+    color:white;
+    /*rgb(110, 108, 108)*/
+}
+.form-btn{
+    margin-top: 30px;
+    padding: 18px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    background-color:black;
+    border: 4px solid #197615;
+    border-radius: 10px;
+    box-shadow:5px 5px 10px #197615;
+
+}
+
+.form-btn:hover{
+    font-weight: 900;
+    color:white;
+}
+
+.feedback{
+    color: white;
+    text-transform: uppercase;
+}
+
+
+
+#signForm {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    width: 350px;
+}
+.title{
+
+    font-size: 100px;
+    color: white;
+
+
+}
+.fa-trash {
+    color: #c62d2d !important;
+}
+.fa-eye{
+    color:#197615 !important;
+}
+
+.submitBtn {
+    margin-top: 30px;
+    padding: 18px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    background-color:#197615;
+    /*background-color: #157D29;*/
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+form .searchInput {
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}
+.home-btn{
+    margin-top: 30px;
+    padding: 18px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #197615;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+}
+.home-btn:hover {
+
+    font-weight: bolder;
+}
+table{
+    background-color: black;
+    opacity: 0.79;
+}
+tr,body{
+    color:#197615;
+}
+.dropdown-menu{
+    background-color: black;
+    opacity: 0.79;
+}
+.dropdown-menu a{
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:20px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+
+.order{
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*font-size:20px;*/
+    /*font-weight: 600;*/
+    text-transform: uppercase;
+}
+.order:hover{
+    font-weight: 800;
+    background:#197615;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: -1px;
+
+}
+
+.dropdown-item:hover{
+    font-weight: 800;
+    background:#197615;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: -1px;
+
+}
+
+
